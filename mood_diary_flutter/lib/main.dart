@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mood_diary_flutter/mood_card.dart';
 import 'package:mood_diary_flutter/mood_database.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_io.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+
+import 'floating_bar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -42,39 +45,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AppBar Text'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              child: GestureDetector(
-                onTap: () {
-                  print('Saved');
-                  moodDatabase.saveInformation('mood', {'name': 'James'});
-                },
-                child: Text('Save Info'),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: GestureDetector(
-                onTap: () async {
-                  final records = await moodDatabase.readAllInformation('mood');
-
-                  records.forEach((element) {
-                    print(element);
-                  });
-                },
-                child: Text('Read Info'),
-              ),
-            ),
-          ],
+      body: SafeArea(
+        child: Center(
+          child: MoodCardWidget(
+            emoji: '😹',
+            label: 'Laugh',
+            color: Colors.amber,
+          ),
         ),
+      ),
+      bottomNavigationBar: FloatingBottomBar(
+        items: [
+          Icons.home,
+          Icons.star_rate,
+          Icons.settings,
+        ],
       ),
     );
   }
