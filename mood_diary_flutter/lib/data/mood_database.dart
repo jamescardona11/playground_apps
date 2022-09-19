@@ -4,9 +4,11 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_io.dart';
 
+const moodStore = 'mood';
+
 abstract class IMoodDatabase {
   final String dbPathName = 'mood.db';
-  late final Database database;
+  Database? database;
 
   final List<String> storesName;
 
@@ -15,6 +17,8 @@ abstract class IMoodDatabase {
   });
 
   Future<void> openDatabase();
+
+  Future<void> closeDatabase();
 
   Future<void> storeCreation();
 
@@ -40,7 +44,12 @@ class MoodDatabase extends IMoodDatabase {
     var dbPath = join(dir.path, dbPathName);
 
     DatabaseFactory dbFactory = databaseFactoryIo;
+
     database = await dbFactory.openDatabase(dbPath);
+  }
+
+  Future<void> closeDatabase() async {
+    await database?.close();
   }
 
   @override
@@ -54,7 +63,7 @@ class MoodDatabase extends IMoodDatabase {
   Future<List<Map<String, Object?>>> readAllInformation(
       String storeName) async {
     final store = await _getStoreRef(storeName);
-    final records = await store.find(database);
+    final records = await store.find(database!);
 
     return records.map((item) => item.value).toList();
   }
@@ -66,7 +75,7 @@ class MoodDatabase extends IMoodDatabase {
   ) async {
     final store = await _getStoreRef(storeName);
 
-    await database.transaction((tnx) async {
+    await database?.transaction((tnx) async {
       await store.add(tnx, data);
     });
   }

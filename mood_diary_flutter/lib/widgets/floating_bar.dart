@@ -4,6 +4,7 @@ class FloatingBottomBar extends StatefulWidget {
   const FloatingBottomBar({
     Key? key,
     required this.items,
+    required this.onChangeItem,
     this.initialIndex = 0,
     this.activeColor = Colors.deepPurple,
     this.inactiveColor = Colors.grey,
@@ -13,6 +14,7 @@ class FloatingBottomBar extends StatefulWidget {
   final int initialIndex;
   final Color activeColor;
   final Color inactiveColor;
+  final ValueChanged<int> onChangeItem;
 
   @override
   State<FloatingBottomBar> createState() => _FloatingBottomBarState();
@@ -57,6 +59,7 @@ class _FloatingBottomBarState extends State<FloatingBottomBar> {
           return InkWell(
             onTap: () {
               innerIndex = itemIndex;
+              widget.onChangeItem(itemIndex);
               setState(() {});
             },
             child: SizedBox(
