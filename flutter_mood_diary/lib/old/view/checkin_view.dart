@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mood_diary_flutter/data/mood_database.dart';
-import 'package:mood_diary_flutter/widgets/mood_card.dart';
+import 'package:flutter_mood_diary/app/data/local_mood_data.dart';
+import 'package:flutter_mood_diary/app/ui/settings/mood_card.dart';
+import 'package:flutter_mood_diary/old/data/mood_database.dart';
 
-import '../data/mood_state.dart';
+import '../../app/domain/mood/mood_state.dart';
 
 class CheckinView extends StatelessWidget {
   /// default constructor
@@ -41,7 +42,7 @@ class CheckinView extends StatelessWidget {
                         child: MoodCardWidget(
                           emoji: item.emoji,
                           label: item.label,
-                          color: item.color,
+                          color: Color(item.color),
                         ),
                       ))
                   .toList(),

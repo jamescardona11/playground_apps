@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mood_diary_flutter/data/mood_database.dart';
-import 'package:mood_diary_flutter/data/mood_state.dart';
+import 'package:flutter_mood_diary/app/domain/mood/mood_state.dart';
+import 'package:flutter_mood_diary/old/data/mood_database.dart';
 
 class HistoryView extends StatefulWidget {
   /// default constructor
@@ -57,7 +57,7 @@ class _HistoryViewState extends State<HistoryView> {
                         mood.label,
                         style: TextStyle(
                           fontSize: 20,
-                          color: mood.color,
+                          color: Color(mood.color),
                         ),
                       ),
                     ],

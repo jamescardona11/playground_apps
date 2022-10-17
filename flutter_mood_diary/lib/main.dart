@@ -27,8 +27,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('AppBar Text'),
       ),
-      body: Container(
-        child: Text('HomePage'),
+      body: Center(
+        child: Text('New Page'),
       ),
     );
   }
