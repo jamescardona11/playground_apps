@@ -1,4 +1,4 @@
-# chuck_norris_flutter
+# flutter_mood_diary
 
 A new Flutter project.
 
