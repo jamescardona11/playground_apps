@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mood_diary/app/pages/settings/mood_card.dart';
 
 // import 'package:flutter_mood_diary/app/ui/settings/mood_card.dart';
 import 'package:flutter_mood_diary/old/data/mood_database.dart';
-import 'package:flutter_mood_diary/app/settings/mood_card.dart';
 
 import '../../core/domain/entities/mood_state.dart';
 import '../../core/infrastructure/data/database/app_shared_preferences.dart';

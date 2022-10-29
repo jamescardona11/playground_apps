@@ -34,11 +34,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AppBar Text'),
-      ),
-      body: Center(
-        child: Text('New Page'),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Text('Hello there 🖐'),
+            ],
+          ),
+        ),
       ),
     );
   }

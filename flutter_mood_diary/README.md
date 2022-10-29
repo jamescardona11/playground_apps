@@ -2,19 +2,7 @@
 
 A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-https://medium.com/geekculture/flutter-3-how-to-extend-themedata-56b8923bf1aa
-https://github.com/retroportalstudio/flutter_theming/blob/master/lib/theme/theme_constants.dart
+## Next steps
+-> Empezar UI
+-> Descargar Icons
+-> Guardar primera vez datos en DB
