@@ -9,15 +9,26 @@ environment:
   sdk: ">=2.17.6 <3.0.0"
 
 dependencies:
+  
   flutter:
     sdk: flutter
-  sembast: ^3.3.0
-  path_provider: ^2.0.11
+  # pocket:
+  #   git:
+  #     url: https://github.com/jamescardona11/starter_kit_flutter.git
+  #     path: pocket/
+      # ref: 
+  get_it: ^7.2.0
+  google_fonts: ^3.0.1
+  injectable: ^1.5.3
+  pocket:
+    path: /Users/zoro/dev/flutter-projects/starter_kit_flutter/pocket
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.3.0
   flutter_lints: ^2.0.0
+  injectable_generator: ^1.5.4
 
 # The following section is specific to Flutter packages.
 flutter:

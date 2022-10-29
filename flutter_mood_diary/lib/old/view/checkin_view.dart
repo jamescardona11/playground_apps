@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mood_diary/app/data/local_mood_data.dart';
-import 'package:flutter_mood_diary/app/ui/settings/mood_card.dart';
-import 'package:flutter_mood_diary/old/data/mood_database.dart';
 
-import '../../app/domain/mood/mood_state.dart';
+// import 'package:flutter_mood_diary/app/ui/settings/mood_card.dart';
+import 'package:flutter_mood_diary/old/data/mood_database.dart';
+import 'package:flutter_mood_diary/app/settings/mood_card.dart';
+
+import '../../core/domain/mood/mood_state.dart';
+import '../../core/infrastructure/data/database/local_mood_data_source.dart';
 
 class CheckinView extends StatelessWidget {
   /// default constructor

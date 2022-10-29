@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class MoodState {
   final String id;
   final String label;
@@ -26,4 +27,19 @@ class MoodState {
         emoji: map['emoji'] as String,
         color: map['color'] as int,
       );
+
+  MoodState copyWith({
+    String? label,
+    String? emoji,
+    int? color,
+    bool? isEnable,
+  }) {
+    return MoodState(
+      id: id,
+      label: label ?? this.label,
+      emoji: emoji ?? this.emoji,
+      color: color ?? this.color,
+      isEnable: isEnable ?? this.isEnable,
+    );
+  }
 }

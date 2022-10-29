@@ -1,4 +1,13 @@
-import 'package:flutter_mood_diary/app/domain/domain.dart';
+import 'package:flutter_mood_diary/core/domain/domain.dart';
+import 'package:pocket/pocket.dart';
+
+class LocalMoodDataSource with PocketCache<IPocketAdapter> {
+  @override
+  IPocketAdapter get adapterDb => SembastPocket.instance();
+
+  @override
+  String get tableName => 'shared_preferences';
+}
 
 final listMoodState = [
   MoodState(

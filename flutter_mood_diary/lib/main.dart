@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mood_diary/di/di.dart';
+import 'package:pocket/pocket.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  configureDependencies();
+
+  await SembastPocket.initAdapter('mood_app.db');
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

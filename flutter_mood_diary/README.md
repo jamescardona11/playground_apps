@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+https://medium.com/geekculture/flutter-3-how-to-extend-themedata-56b8923bf1aa
+https://github.com/retroportalstudio/flutter_theming/blob/master/lib/theme/theme_constants.dart

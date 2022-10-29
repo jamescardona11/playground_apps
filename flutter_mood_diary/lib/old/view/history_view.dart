@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mood_diary/app/domain/mood/mood_state.dart';
+import 'package:flutter_mood_diary/core/domain/mood/mood_state.dart';
 import 'package:flutter_mood_diary/old/data/mood_database.dart';
 
 class HistoryView extends StatefulWidget {
