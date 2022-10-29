@@ -1,4 +1,4 @@
-import 'package:flutter_mood_diary/core/domain/mood/mood_state.dart';
+import 'package:flutter_mood_diary/core/domain/entities/mood_state.dart';
 
 abstract class IMoodRepository {
   Future<void> createFirstTimeMoods();

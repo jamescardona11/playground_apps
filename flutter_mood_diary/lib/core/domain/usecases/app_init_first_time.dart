@@ -1,5 +1,5 @@
-import 'package:flutter_mood_diary/core/domain/app/i_app_repository.dart';
-import 'package:flutter_mood_diary/core/domain/core/i_use_case.dart';
+import 'package:flutter_mood_diary/core/base/i_use_case.dart';
+import 'package:flutter_mood_diary/core/domain/i_repositories/i_app_repository.dart';
 
 class AppInitFirstTimeData {}
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/core/domain/domain.dart';
-import 'package:flutter_mood_diary/core/infrastructure/data/database/local_mood_data_source.dart';
+import 'package:flutter_mood_diary/core/infrastructure/data/database/app_shared_preferences.dart';
 
 import 'mood_card.dart';
 

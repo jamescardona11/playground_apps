@@ -1,7 +1,7 @@
 import 'package:flutter_mood_diary/core/domain/domain.dart';
 import 'package:pocket/pocket.dart';
 
-class LocalMoodDataSource with PocketCache<IPocketAdapter> {
+class AppSharedPreferences with PocketCache<IPocketAdapter> {
   @override
   IPocketAdapter get adapterDb => SembastPocket.instance();
 

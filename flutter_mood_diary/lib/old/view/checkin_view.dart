@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/old/data/mood_database.dart';
 import 'package:flutter_mood_diary/app/settings/mood_card.dart';
 
-import '../../core/domain/mood/mood_state.dart';
-import '../../core/infrastructure/data/database/local_mood_data_source.dart';
+import '../../core/domain/entities/mood_state.dart';
+import '../../core/infrastructure/data/database/app_shared_preferences.dart';
 
 class CheckinView extends StatelessWidget {
   /// default constructor

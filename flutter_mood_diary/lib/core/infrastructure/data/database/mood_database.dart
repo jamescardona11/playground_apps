@@ -1,7 +1,7 @@
 import 'package:flutter_mood_diary/core/infrastructure/data.dart';
 import 'package:pocket/pocket.dart';
 
-class AppValuesDataSource with PocketDatabase<IPocketAdapter, MoodStateDTO> {
+class MoodDatabase with PocketDatabase<IPocketAdapter, MoodStateDTO> {
   @override
   IPocketAdapter get adapterDb => SembastPocket.instance();
 

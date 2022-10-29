@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mood_diary/di/di.dart';
+import 'package:flutter_mood_diary/config/di/di.dart';
 import 'package:pocket/pocket.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   configureDependencies();
 
   await SembastPocket.initAdapter('mood_app.db');

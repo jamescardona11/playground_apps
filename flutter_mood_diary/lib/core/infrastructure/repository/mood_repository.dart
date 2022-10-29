@@ -1,17 +1,14 @@
 import 'package:flutter_mood_diary/core/domain/domain.dart';
-import 'package:flutter_mood_diary/core/infrastructure/data/database/local_mood_data_source.dart';
+import 'package:flutter_mood_diary/core/infrastructure/data/database/app_shared_preferences.dart';
 
 class MoodRepository extends IMoodRepository {
-  final LocalMoodDataSource _dataSource = LocalMoodDataSource();
+  MoodRepository(this._dataSource);
 
-  MoodRepository() {
-    // _dataSource = ;
-  }
+  final AppSharedPreferences _dataSource;
 
   @override
-  Future<void> createFirstTimeMoods() {
-    // TODO: implement createFirstTimeMoods
-    throw UnimplementedError();
+  Future<void> createFirstTimeMoods() async {
+    // _dataSource.
   }
 
   @override
