@@ -39,7 +39,9 @@ class HeaderCurrentTaskItem extends StatelessWidget {
             DecoratedBox(
               decoration: BoxDecoration(
                 color: Colors.red,
-                borderRadius: context.appSizes.borderRadius10,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(16),
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -51,7 +53,7 @@ class HeaderCurrentTaskItem extends StatelessWidget {
             ),
             Row(
               children: [
-                CircleContinerForIcons(
+                CircleContainerForIcons(
                   icon: FontAwesomeIcons.fire,
                 ),
                 Text('Create user flow for client'),

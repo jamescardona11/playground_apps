@@ -24,7 +24,7 @@ class ColorCardWidget extends StatelessWidget {
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: color,
-              borderRadius: context.appSizes.borderRadius30,
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
             ),
             child: child,
           ),

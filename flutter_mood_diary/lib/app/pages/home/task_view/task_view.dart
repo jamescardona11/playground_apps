@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mood_diary/app/widgets/input_text_widget.dart';
 import 'package:flutter_mood_diary/app/widgets/widgets.dart';
-
 import 'package:flutter_mood_diary/config/context_extension.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'circular_checkbox.dart';
@@ -15,33 +16,52 @@ class TaskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          ColorCardWidget(
-            // height: 160,
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 16,
+          Row(
+            children: [
+              const SizedBox(width: 40),
+              Text(
+                'Create',
+                style: Theme.of(context).textTheme.headline1,
               ),
-              child: Row(
-                children: [
-                  CircularCheckBox(
-                    onChange: (value) {},
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: context.appColors.blueBlack,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(16),
                   ),
-                  // CircleContinerForIcons(
-                  //   icon: FontAwesomeIcons.fire,
-                  // ),
-                  Text('Create user flow for client'),
-                  Spacer(),
-                  CircleContinerForIcons(
-                    icon: FontAwesomeIcons.ellipsis,
-                  ),
-                ],
+                ),
+                child: FaIcon(
+                  FontAwesomeIcons.arrowRight,
+                  color: context.appColors.white,
+                  size: 20,
+                ),
+              )
+            ],
+          ),
+          InputTextWidget(
+            hint: 'asjasjasj',
+            icon: FontAwesomeIcons.plus,
+          ),
+          Row(
+            children: [
+              InputTextWidget(
+                hint: 'asjasjasj',
+                icon: FontAwesomeIcons.calendar,
               ),
-            ),
+              InputTextWidget(
+                hint: 'asjasjasj',
+                icon: FontAwesomeIcons.vial,
+              ),
+            ],
+          ),
+          InputTextWidget(
+            hint: 'asjasjasj',
+            icon: FontAwesomeIcons.featherPointed,
           ),
         ],
       ),

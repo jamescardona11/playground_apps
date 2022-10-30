@@ -74,7 +74,7 @@ class NewTaskCard extends StatelessWidget {
       height: 280,
       color: context.appColors.blue.withOpacity(0.5),
       child: Padding(
-        padding: context.appSizes.marginV12,
+        padding: const EdgeInsets.symmetric(vertical: 12),
         child: Column(
           children: [
             Text(
@@ -123,10 +123,14 @@ class NewTaskCard extends StatelessWidget {
                     margin: const EdgeInsets.only(left: 10, top: 20, right: 10),
                     decoration: BoxDecoration(
                       color: context.appColors.white,
-                      borderRadius: context.appSizes.borderRadius30,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(16),
+                      ),
                     ),
                     child: ClipRRect(
-                      borderRadius: context.appSizes.borderRadius30,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(16),
+                      ),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -190,7 +194,7 @@ class ImageNewTask extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       child: Padding(
-        padding: context.appSizes.margin16,
+        padding: const EdgeInsets.all(16),
         child: Image.asset(asset),
       ),
     );

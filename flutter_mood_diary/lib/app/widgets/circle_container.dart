@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/config/context_extension.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CircleContinerForIcons extends StatelessWidget {
-  const CircleContinerForIcons({
+class CircleContainerForIcons extends StatelessWidget {
+  const CircleContainerForIcons({
     Key? key,
     this.asset,
     this.icon,
@@ -27,7 +27,7 @@ class CircleContinerForIcons extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         child: Padding(
-          padding: context.appSizes.margin8,
+          padding: const EdgeInsets.all(8),
           child: asset != null
               ? Image.asset(asset!)
               : FaIcon(
