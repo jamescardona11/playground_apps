@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/config/context_extension.dart';
 import 'package:flutter_mood_diary/config/di/di.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pocket/pocket.dart';
 
 import 'app/widgets/bottom_item.dart';
@@ -59,9 +60,11 @@ class HomePage extends StatelessWidget {
               ),
               const NewTaskCard(),
               ColorCardWidget(
+                height: 100,
                 color: context.appColors.green.withOpacity(0.7),
               ),
               ColorCardWidget(
+                height: 100,
                 color: context.appColors.yellow.withOpacity(0.4),
               ),
             ],
@@ -91,12 +94,12 @@ class HomePage extends StatelessWidget {
 class ColorCardWidget extends StatelessWidget {
   const ColorCardWidget({
     Key? key,
-    this.height = 100,
+    this.height,
     required this.color,
     this.child,
   }) : super(key: key);
 
-  final double height;
+  final double? height;
   final Color color;
   final Widget? child;
 
@@ -104,14 +107,14 @@ class ColorCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: context.appSizes.space20),
+        const SizedBox(height: 15),
         SizedBox(
           height: height,
           width: double.maxFinite,
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: color,
-              borderRadius: context.appSizes.borderRadius25,
+              borderRadius: context.appSizes.borderRadius30,
             ),
             child: child,
           ),
@@ -129,19 +132,19 @@ class NewTaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColorCardWidget(
-      height: 300,
+      height: 280,
       color: context.appColors.blue.withOpacity(0.5),
       child: Padding(
-        padding: context.appSizes.margin12,
+        padding: context.appSizes.marginV12,
         child: Column(
           children: [
             Text(
-              'Do you have something new for today?',
+              'Do you have something  for today?',
               style: Theme.of(context).textTheme.headline2!.copyWith(
                     fontSize: 18,
                   ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Expanded(
               child: Column(
                 children: [
@@ -169,6 +172,52 @@ class NewTaskCard extends StatelessWidget {
                         asset: context.apAssets.coffeeImg,
                       ),
                     ],
+                  ),
+                  Container(
+                    height: 50,
+                    margin: const EdgeInsets.only(left: 10, top: 20, right: 10),
+                    decoration: BoxDecoration(
+                      color: context.appColors.white,
+                      borderRadius: context.appSizes.borderRadius30,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: context.appSizes.borderRadius30,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              autofocus: false,
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: context.appColors.black,
+                              ),
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: context.appColors.white,
+                                hintText: 'New task',
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: 45,
+                            height: 45,
+                            margin: const EdgeInsets.symmetric(horizontal: 5),
+                            decoration: BoxDecoration(
+                              color: context.appColors.black,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: FaIcon(
+                                FontAwesomeIcons.plus,
+                                color: context.appColors.white,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
