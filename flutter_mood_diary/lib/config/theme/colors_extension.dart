@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppColorTheme extends ThemeExtension<AppColorTheme> {
-  AppColorTheme({
+class AppColors extends ThemeExtension<AppColors> {
+  AppColors({
     this.primary = const Color(0xFFFF3378),
     this.secondary = const Color(0xFFFF2278),
     this.blueBlack = const Color.fromARGB(255, 36, 64, 73),
@@ -38,7 +38,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
   Color get textColorForPrimary => black;
 
   @override
-  AppColorTheme copyWith({
+  AppColors copyWith({
     Color? primary,
     Color? secondary,
     Color? blueBlack,
@@ -50,7 +50,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
     Color? green,
     Color? blue,
   }) {
-    return AppColorTheme(
+    return AppColors(
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
       blueBlack: blueBlack ?? this.blueBlack,
@@ -64,13 +64,12 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
   }
 
   @override
-  ThemeExtension<AppColorTheme> lerp(
-      ThemeExtension<AppColorTheme>? other, double t) {
-    if (other is! AppColorTheme) {
+  ThemeExtension<AppColors> lerp(ThemeExtension<AppColors>? other, double t) {
+    if (other is! AppColors) {
       return this;
     }
 
-    return AppColorTheme(
+    return AppColors(
       primary: Color.lerp(primary, other.primary, t) ?? Colors.transparent,
       secondary:
           Color.lerp(secondary, other.secondary, t) ?? Colors.transparent,
