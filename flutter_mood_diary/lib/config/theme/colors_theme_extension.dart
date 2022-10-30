@@ -41,7 +41,9 @@ class AppColors extends ThemeExtension<AppColors> {
 
   Color get iconColors => grey;
 
-  Color get textColorForPrimary => black;
+  Color get textColorPrimary => black;
+
+  Color get textColorSecondary => Colors.black;
 
   @override
   AppColors copyWith({

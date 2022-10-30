@@ -3,9 +3,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mood_diary/config/theme/assets_theme_extension.dart';
 
-import 'theme/colors_extension.dart';
-import 'theme/sizes_extension.dart';
+import 'theme/colors_theme_extension.dart';
+import 'theme/sizes_theme_extension.dart';
 
 /// extension from starter kit and argo-library
 /// {@template responsive_extension}
@@ -58,8 +59,10 @@ extension ResponsiveContext on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
 
   /// Return custom AppSizes
-  AppSizes get sizes => Theme.of(this).extension<AppSizes>()!;
+  AppSizes get appSizes => Theme.of(this).extension<AppSizes>()!;
+
+  AppAssets get apAssets => Theme.of(this).extension<AppAssets>()!;
 
   /// Return custom AppColors
-  AppColors get colors => Theme.of(this).extension<AppColors>()!;
+  AppColors get appColors => Theme.of(this).extension<AppColors>()!;
 }

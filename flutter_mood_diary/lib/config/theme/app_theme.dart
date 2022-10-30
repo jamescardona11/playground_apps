@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mood_diary/config/theme/assets_theme_extension.dart';
 
-import 'colors_extension.dart';
-import 'sizes_extension.dart';
+import 'colors_theme_extension.dart';
+import 'sizes_theme_extension.dart';
 import 'text_theme.dart';
 
 class AppTheme {
@@ -20,6 +21,7 @@ class AppTheme {
       extensions: <ThemeExtension<dynamic>>[
         appColors,
         AppSizes(),
+        AppAssets(),
       ],
       // elevatedButtonTheme:
     );
