@@ -5,9 +5,11 @@ class AppSizes extends ThemeExtension<AppSizes> {
   double get sizeHeaderBar => 65;
 
   // radius
+  Radius get radius10 => const Radius.circular(10);
   Radius get radius15 => const Radius.circular(15);
   Radius get radius30 => const Radius.circular(30);
 
+  BorderRadius get borderRadius10 => BorderRadius.all(radius10);
   BorderRadius get borderRadius15 => BorderRadius.all(radius15);
   BorderRadius get borderRadius30 => BorderRadius.all(radius30);
 
