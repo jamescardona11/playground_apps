@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class AppColors extends ThemeExtension<AppColors> {
@@ -12,6 +13,8 @@ class AppColors extends ThemeExtension<AppColors> {
     this.red = const Color(0xFFE14454),
     this.green = const Color(0xFF43aa8b),
     this.blue = const Color(0xFF2095C3),
+    this.orange = const Color(0xffde5a03),
+    this.yellow = const Color(0xfffed179),
   });
 
   //app
@@ -27,6 +30,9 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color red;
   final Color green;
   final Color blue;
+
+  final Color orange;
+  final Color yellow;
 
   //derivatives
   Color get grey2 => black.withOpacity(0.5);
@@ -44,11 +50,13 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? blueBlack,
     Color? black,
     Color? white,
+    Color? cream,
     Color? grey,
-    Color? grey2,
     Color? red,
     Color? green,
     Color? blue,
+    Color? orange,
+    Color? yellow,
   }) {
     return AppColors(
       primary: primary ?? this.primary,
@@ -56,10 +64,13 @@ class AppColors extends ThemeExtension<AppColors> {
       blueBlack: blueBlack ?? this.blueBlack,
       black: black ?? this.black,
       white: white ?? this.white,
+      cream: cream ?? this.cream,
       grey: grey ?? this.grey,
       red: red ?? this.red,
       green: green ?? this.green,
       blue: blue ?? this.blue,
+      orange: orange ?? this.orange,
+      yellow: yellow ?? this.yellow,
     );
   }
 
@@ -81,6 +92,8 @@ class AppColors extends ThemeExtension<AppColors> {
       red: Color.lerp(red, other.red, t) ?? Colors.transparent,
       green: Color.lerp(green, other.green, t) ?? Colors.transparent,
       blue: Color.lerp(blue, other.blue, t) ?? Colors.transparent,
+      yellow: Color.lerp(yellow, other.yellow, t) ?? Colors.transparent,
+      orange: Color.lerp(orange, other.orange, t) ?? Colors.transparent,
     );
   }
 }

@@ -58,8 +58,8 @@ extension ResponsiveContext on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
 
   /// Return custom AppSizes
-  AppSizes get appSizes => Theme.of(this).extension<AppSizes>()!;
+  AppSizes get sizes => Theme.of(this).extension<AppSizes>()!;
 
   /// Return custom AppColors
-  AppColors get appColors => Theme.of(this).extension<AppColors>()!;
+  AppColors get colors => Theme.of(this).extension<AppColors>()!;
 }

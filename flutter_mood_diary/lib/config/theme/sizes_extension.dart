@@ -15,8 +15,24 @@ class AppSizes extends ThemeExtension<AppSizes> {
   double get space100 => 100;
   double get space50 => 50;
   double get space30 => 30;
+  double get space20 => 20;
   double get space15 => 15;
   double get space5 => 5;
+
+  // // sizedBox
+  // SizedBox get sizedH100 => SizedBox(height: space100);
+  // SizedBox get sizedH50 => SizedBox(height: space50);
+  // SizedBox get sizedH30 => SizedBox(height: space30);
+  // SizedBox get sizedH20 => SizedBox(height: space20);
+  // SizedBox get sizedH15 => SizedBox(height: space15);
+  // SizedBox get sizedH5 => SizedBox(height: space5);
+
+  // SizedBox get sizedW100 => SizedBox(width: space100);
+  // SizedBox get sizedW50 => SizedBox(width: space50);
+  // SizedBox get sizedW30 => SizedBox(width: space30);
+  // SizedBox get sizedW20 => SizedBox(width: space20);
+  // SizedBox get sizedW15 => SizedBox(width: space15);
+  // SizedBox get sizedW5 => SizedBox(width: space5);
 
   // margins
   EdgeInsets get vMargin8 => const EdgeInsets.symmetric(vertical: 8);

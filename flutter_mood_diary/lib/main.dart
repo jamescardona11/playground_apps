@@ -4,6 +4,8 @@ import 'package:flutter_mood_diary/config/di/di.dart';
 import 'package:flutter_mood_diary/config/theme/colors_extension.dart';
 import 'package:pocket/pocket.dart';
 
+import 'app/widgets/bottom_item.dart';
+import 'app/widgets/floating_bottom_bar.dart';
 import 'config/theme/app_theme.dart';
 
 void main() async {
@@ -57,19 +59,58 @@ class HomePage extends StatelessWidget {
                 'A great day to change your mood',
                 style: Theme.of(context).textTheme.bodyText2,
               ),
+              SizedBox(height: context.sizes.space20),
               SizedBox(
-                height: 200,
+                height: 300,
                 width: double.maxFinite,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    color: context.appColors.blue,
-                    borderRadius: context.appSizes.borderRadius25,
+                    color: context.colors.blue.withOpacity(0.5),
+                    borderRadius: context.sizes.borderRadius25,
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: context.sizes.space20),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: context.colors.green.withOpacity(0.7),
+                    borderRadius: context.sizes.borderRadius25,
+                  ),
+                ),
+              ),
+              SizedBox(height: context.sizes.space20),
+              SizedBox(
+                height: 100,
+                width: double.maxFinite,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: context.colors.yellow.withOpacity(0.4),
+                    borderRadius: context.sizes.borderRadius25,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: FloatingBottomBar(
+        items: [
+          BottomElevenItem(
+            label: 'Home',
+            icon: Icons.home,
+          ),
+          BottomElevenItem(
+            label: 'Trending',
+            icon: Icons.trending_up,
+          ),
+          BottomElevenItem(
+            label: 'Search',
+            icon: Icons.search,
+          ),
+        ],
       ),
     );
   }
