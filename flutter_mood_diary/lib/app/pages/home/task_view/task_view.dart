@@ -1,68 +1,50 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/app/widgets/input_text_widget.dart';
+import 'package:flutter_mood_diary/app/widgets/round_container.dart';
 import 'package:flutter_mood_diary/app/widgets/widgets.dart';
 import 'package:flutter_mood_diary/config/context_extension.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:sheet/sheet.dart';
 
 import 'circular_checkbox.dart';
+import 'header_current_task_item.dart';
 
-class TaskPage extends StatelessWidget {
+class TaskView extends StatelessWidget {
   /// default constructor
-  const TaskPage({
+  const TaskView({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 0),
       child: Column(
         children: [
-          Row(
-            children: [
-              const SizedBox(width: 40),
-              Text(
-                'Create',
-                style: Theme.of(context).textTheme.headline1,
-              ),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: context.appColors.blueBlack,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(16),
+          SizedBox(
+            height: 180,
+            child: ListView.builder(
+              itemCount: 4,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (_, index) {
+                bool isLast = index == 3;
+                return Padding(
+                  padding: EdgeInsets.only(
+                    right: isLast ? 16 : 0,
+                    left: 16,
                   ),
-                ),
-                child: FaIcon(
-                  FontAwesomeIcons.arrowRight,
-                  color: context.appColors.white,
-                  size: 20,
-                ),
-              )
-            ],
-          ),
-          InputTextWidget(
-            hint: 'asjasjasj',
-            icon: FontAwesomeIcons.plus,
-          ),
-          Row(
-            children: [
-              InputTextWidget(
-                hint: 'asjasjasj',
-                icon: FontAwesomeIcons.calendar,
-              ),
-              InputTextWidget(
-                hint: 'asjasjasj',
-                icon: FontAwesomeIcons.vial,
-              ),
-            ],
-          ),
-          InputTextWidget(
-            hint: 'asjasjasj',
-            icon: FontAwesomeIcons.featherPointed,
-          ),
+                  child: HeaderCurrentTaskItem(
+                    color: context.appColors.blue.withOpacity(0.5),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );

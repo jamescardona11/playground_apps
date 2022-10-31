@@ -26,7 +26,7 @@ class TaskItemList extends StatelessWidget {
             ),
             Text('Create user flow for client'),
             Spacer(),
-            CircleContainerForIcons(
+            CircleContainerAsset(
               icon: FontAwesomeIcons.ellipsis,
             ),
           ],

@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/config/context_extension.dart';
 
+import 'round_container.dart';
+
 class ColorCardWidget extends StatelessWidget {
   const ColorCardWidget({
     Key? key,
     this.height,
+    this.width,
     required this.color,
     this.child,
   }) : super(key: key);
 
   final double? height;
+  final double? width;
   final Color color;
   final Widget? child;
 
@@ -18,16 +22,11 @@ class ColorCardWidget extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 15),
-        SizedBox(
+        RoundContainer(
           height: height,
-          width: double.maxFinite,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: const BorderRadius.all(Radius.circular(16)),
-            ),
-            child: child,
-          ),
+          width: width ?? context.widthPx,
+          color: color,
+          child: child,
         ),
       ],
     );

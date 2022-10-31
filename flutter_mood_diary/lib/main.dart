@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme(),
       home: Scaffold(
         body: SafeArea(
-          child: TaskPage(),
+          child: TaskView(),
         ),
       ),
     );

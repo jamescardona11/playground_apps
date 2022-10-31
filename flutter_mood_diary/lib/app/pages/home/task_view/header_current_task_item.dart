@@ -8,27 +8,26 @@ import 'circular_checkbox.dart';
 class HeaderCurrentTaskItem extends StatelessWidget {
   const HeaderCurrentTaskItem({
     Key? key,
+    required this.color,
   }) : super(key: key);
+
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return ColorCardWidget(
+      width: context.widthPct(85),
       height: 160,
-      color: Colors.white,
+      color: color,
       child: Padding(
-        padding: const EdgeInsets.only(
-          left: 16,
-          top: 16,
-          bottom: 16,
-          right: 26,
-        ),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
                 CircularCheckBox(
-                  onChange: ((value) {}),
+                  onChange: (value) {},
                 ),
                 Text('25 Jun'),
                 const Spacer(),
@@ -53,7 +52,7 @@ class HeaderCurrentTaskItem extends StatelessWidget {
             ),
             Row(
               children: [
-                CircleContainerForIcons(
+                CircleContainerAsset(
                   icon: FontAwesomeIcons.fire,
                 ),
                 Text('Create user flow for client'),
