@@ -24,7 +24,7 @@ class CreatePage extends StatelessWidget {
               const SizedBox(width: 40),
               Text(
                 'Create',
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.headline5,
               ),
               const Spacer(),
               Container(

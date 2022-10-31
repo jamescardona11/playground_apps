@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 'Hello there 🖐',
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.headline5,
               ),
               Text(
                 'A great day to change your mood',
@@ -79,7 +80,7 @@ class NewTaskCard extends StatelessWidget {
           children: [
             Text(
               'Do you have something  for today?',
-              style: Theme.of(context).textTheme.headline2!.copyWith(
+              style: Theme.of(context).textTheme.headline6!.copyWith(
                     fontSize: 18,
                   ),
             ),
