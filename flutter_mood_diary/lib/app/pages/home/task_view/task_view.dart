@@ -23,60 +23,39 @@ class TaskView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
-          ),
-          child: Text(
-            'My task',
-            style: Theme.of(context).textTheme.headline5,
-          ),
-        ),
-        const SizedBox(height: 20),
-        SizedBox(
-          height: 160,
-          child: ListView.builder(
-            itemCount: 4,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (_, index) {
-              bool isLast = index == 3;
-              return Padding(
-                padding: EdgeInsets.only(
-                  right: isLast ? 16 : 0,
-                  left: 16,
-                ),
-                child: HeaderCurrentTaskItem(
-                  color: context.appColors.blue.withOpacity(0.5),
-                ),
-              );
-            },
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(
-              left: 16,
-              right: 16,
-              top: 16,
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'My task',
+              style: Theme.of(context).textTheme.headline5,
             ),
-            child: ListView.builder(
-              itemCount: 20,
-              itemBuilder: (_, index) => Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: TaskItemList(),
+            const SizedBox(height: 20),
+            HeaderCurrentTaskItem(
+              color: context.appColors.blue.withOpacity(0.5),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 20,
+                itemBuilder: (_, index) => Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: TaskItemList(),
+                ),
               ),
-              // separatorBuilder: (context, index) => Divider(
-              //   height: 2,
-              //   color: Colors.grey,
-              // ),
-            ),
-          ),
-        )
-      ],
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: Container(
+        color: Colors.amber,
+        child: GestureDetector(
+          onTap: () {},
+          child: Text('Texto 1'),
+        ),
+      ),
     );
   }
 }

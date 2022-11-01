@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mood_diary/config/di/di.dart';
 import 'package:pocket/pocket.dart';
 
+import 'app/pages/create_task/create_task_page.dart';
 import 'app/pages/home/task_view/task_view.dart';
 import 'config/theme/app_theme.dart';
 
@@ -25,11 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme(),
-      home: Scaffold(
-        body: SafeArea(
-          child: TaskView(),
-        ),
-      ),
+      home: CreateTaskPage(),
     );
   }
 }

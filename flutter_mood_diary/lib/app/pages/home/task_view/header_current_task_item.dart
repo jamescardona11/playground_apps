@@ -17,7 +17,7 @@ class HeaderCurrentTaskItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RoundContainer(
-      width: context.widthPct(85),
+      width: context.widthPx,
       height: 140,
       color: color,
       child: Padding(

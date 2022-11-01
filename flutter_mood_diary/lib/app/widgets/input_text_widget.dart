@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_mood_diary/app/widgets/widgets.dart';
 import 'package:flutter_mood_diary/config/context_extension.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -56,34 +57,16 @@ class InputTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return RoundContainer(
       width: width,
       height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        color: Colors.transparent,
-        border: Border.all(
-          color: Colors.grey,
-        ),
-      ),
+      borderColor: Colors.grey,
       child: Row(
         children: [
-          Container(
-            width: 45,
-            height: 45,
-            margin: const EdgeInsets.symmetric(horizontal: 5),
-            decoration: BoxDecoration(
-              color: context.appColors.grey,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(18),
-              ),
-            ),
-            child: Center(
-              child: FaIcon(
-                icon,
-                color: context.appColors.black,
-              ),
-            ),
+          ActionIcon(
+            background: context.appColors.grey,
+            iconColor: context.appColors.black,
+            icon: icon,
           ),
           Expanded(
             child: TextFormField(
