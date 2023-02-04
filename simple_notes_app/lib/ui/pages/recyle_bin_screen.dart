@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import '../blocs/bloc_exports.dart';
-import '../widgets/tasks_list.dart';
-import 'drawer_widget.dart';
+import 'package:simple_notes_app/blocs/bloc_exports.dart';
+import 'package:simple_notes_app/ui/ui.dart';
 
-class RecyleBinScreen extends StatelessWidget {
+class RecycleBinScreen extends StatelessWidget {
   static const id = 'recycle-bin';
-  const RecyleBinScreen({Key? key}) : super(key: key);
+  const RecycleBinScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

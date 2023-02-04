@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_notes_app/blocs/bloc_exports.dart';
 
-import '../models/tasks_model.dart';
+import '../../models/tasks_model.dart';
 import 'generate_ids.dart';
 
 void showModalBox(BuildContext context) {

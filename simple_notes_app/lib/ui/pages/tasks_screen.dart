@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_notes_app/blocs/bloc_exports.dart';
 import 'package:simple_notes_app/models/tasks_model.dart';
-import 'package:simple_notes_app/screens/drawer_widget.dart';
-
-import '../widgets/modal_box.dart';
-import '../widgets/tasks_list.dart';
+import 'package:simple_notes_app/ui/ui.dart';
 
 class TasksScreen extends StatelessWidget {
   static const id = '/';

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_notes_app/blocs/bloc_exports.dart';
-import 'package:simple_notes_app/screens/recyle_bin_screen.dart';
-import 'package:simple_notes_app/screens/tasks_screen.dart';
+import 'package:simple_notes_app/ui/pages/tasks_screen.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -34,7 +33,7 @@ class MyDrawer extends StatelessWidget {
             BlocBuilder<TasksBloc, TasksState>(
               builder: (context, state) {
                 return ListTile(
-                  onTap: () => Navigator.pushNamed(context, RecyleBinScreen.id),
+                  onTap: () => Navigator.pushNamed(context, 'recycle-bin'),
                   leading: const Icon(Icons.delete),
                   trailing: Text(state.removedTasks.length.toString()),
                   title: const Text("Deleted task"),

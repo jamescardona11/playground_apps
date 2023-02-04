@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../blocs/bloc_exports.dart';
-import '../models/tasks_model.dart';
+import '../../blocs/bloc_exports.dart';
+import '../../models/tasks_model.dart';
 
 class TasksList extends StatelessWidget {
   const TasksList({Key? key, required this.tasks}) : super(key: key);
