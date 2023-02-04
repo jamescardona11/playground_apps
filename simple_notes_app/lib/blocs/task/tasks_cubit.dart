@@ -1,12 +1,27 @@
+import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:simple_notes_app/models/tasks_model.dart';
+import 'package:simple_notes_app/repository/local_task_repository.dart';
 
 import '../bloc_exports.dart';
 
 part 'tasks_state.dart';
 
 class TasksBloc extends Cubit<TasksState> {
-  TasksBloc() : super(const TasksState());
+  TasksBloc(this._localTaskRepository) : super(const TasksState()) {
+    _initStreamListeners();
+  }
+
+  final LocalTaskRepository _localTaskRepository;
+  StreamSubscription<List<Task>>? _streamTasksSubscription;
+
+  @override
+  Future<void> close() {
+    _streamTasksSubscription?.cancel();
+
+    return super.close();
+  }
 
   void addTask(Task task) {
     List<Task> allTasks = List.from(state.allTasks)..add(task);
@@ -26,4 +41,14 @@ class TasksBloc extends Cubit<TasksState> {
   void deleteTask(String id) {}
 
   void removeTask(String id) {}
+
+  Future<void> _initStreamListeners() async {
+    _streamTasksSubscription = _localTaskRepository.readTask().listen((tasks) {
+      _addTaskFromDatabase(tasks);
+    });
+  }
+
+  void _addTaskFromDatabase(List<Task> tasks) {
+    emit(state.copyWith(allTasks: tasks));
+  }
 }

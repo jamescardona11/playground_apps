@@ -10,7 +10,7 @@ void showModalBox(BuildContext context) {
     context: context,
     builder: (context) => SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        height: MediaQuery.of(context).copyWith().size.height * 0.75,
         child: Padding(
           padding: const EdgeInsets.all(14.0),
           child: Column(
@@ -26,8 +26,8 @@ void showModalBox(BuildContext context) {
                 controller: titleController,
                 autofocus: true,
                 decoration: const InputDecoration(
-                  helperMaxLines: 3,
-                  label: Text('Title'),
+                  helperMaxLines: 1,
+                  hintText: "Title",
                   border: OutlineInputBorder(),
                 ),
               ),
