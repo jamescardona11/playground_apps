@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:simple_notes_app/blocs/bloc_exports.dart';
 
 import '../../models/tasks_model.dart';
-import 'generate_ids.dart';
 
 void showModalBox(BuildContext context) {
   TextEditingController titleController = TextEditingController();
@@ -40,9 +39,8 @@ void showModalBox(BuildContext context) {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      var task = Task(
+                      var task = Task.create(
                         title: titleController.text,
-                        id: GUIDGen.generate(),
                       );
                       context.read<TasksBloc>().addTask(task);
                       Navigator.pop(context);

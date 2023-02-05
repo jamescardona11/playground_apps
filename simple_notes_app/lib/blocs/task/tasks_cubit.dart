@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:equatable/equatable.dart';
+import 'package:simple_notes_app/models/stats_model.dart';
 import 'package:simple_notes_app/models/tasks_model.dart';
 import 'package:simple_notes_app/repository/local_task_repository.dart';
 

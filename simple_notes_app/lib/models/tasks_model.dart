@@ -1,14 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 
 @immutable
-class Task extends Equatable {
+class Task {
   final String title;
   final String description;
-  final bool? isDeleted;
-  final bool? isDone;
+  final bool isDeleted;
+  final bool isDone;
   final String id;
 
   const Task({
@@ -21,7 +20,7 @@ class Task extends Equatable {
 
   factory Task.create({
     required String title,
-    required String description,
+    String description = '',
   }) =>
       Task(
         id: const Uuid().v4(),
@@ -45,14 +44,18 @@ class Task extends Equatable {
   }
 
   @override
-  List<Object?> get props => [
-        title,
-        description,
-        isDeleted,
-        isDone,
-        id,
-      ];
+  bool operator ==(covariant Task other) {
+    if (identical(this, other)) return true;
+
+    return other.title == title &&
+        other.description == description &&
+        other.isDeleted == isDeleted &&
+        other.isDone == isDone &&
+        other.id == id;
+  }
 
   @override
-  bool get stringify => true;
+  int get hashCode {
+    return title.hashCode ^ description.hashCode ^ isDeleted.hashCode ^ isDone.hashCode ^ id.hashCode;
+  }
 }

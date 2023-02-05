@@ -4,7 +4,7 @@ import 'package:simple_notes_app/models/tasks_model.dart';
 import 'package:simple_notes_app/ui/ui.dart';
 
 class TasksView extends StatelessWidget {
-  TasksView({
+  const TasksView({
     Key? key,
   }) : super(key: key);
 
@@ -22,13 +22,13 @@ class TasksView extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: StatGroup(
+                    child: StatCard(
                       color: Colors.amber,
                       label: 'Completed Tasks',
                     ),
                   ),
                   Expanded(
-                    child: StatGroup(
+                    child: StatCard(
                       color: Colors.indigoAccent,
                       label: 'PendingTask Tasks',
                     ),
@@ -46,48 +46,5 @@ class TasksView extends StatelessWidget {
         ),
       );
     });
-  }
-}
-
-class StatGroup extends StatelessWidget {
-  const StatGroup({
-    this.onTap,
-    Key? key,
-    required this.color,
-    required this.label,
-    this.taskLength = 0,
-  }) : super(key: key);
-
-  final VoidCallback? onTap;
-  final String label;
-  final int taskLength;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          height: 50,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: const BorderRadius.all(Radius.circular(15)),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '$label: $taskLength',
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }

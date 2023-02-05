@@ -7,8 +7,8 @@ part 'tasks_dto.g.dart';
 class TaskDto {
   final String title;
   final String description;
-  final bool? isDeleted;
-  final bool? isDone;
+  final bool isDeleted;
+  final bool isDone;
   final String id;
 
   const TaskDto({
