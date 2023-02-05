@@ -5,7 +5,7 @@ class AppRouter {
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case 'tasks-screen':
-        return MaterialPageRoute(builder: (_) => const TasksView());
+        return MaterialPageRoute(builder: (_) => TasksView());
       case 'recycle-bin':
         return MaterialPageRoute(builder: (_) => const RecycleBinScreen());
       default:

@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_notes_app/ui/ui.dart';
 
@@ -29,12 +30,25 @@ class _HomePageState extends State<HomePage> {
       drawer: MyDrawer(
         onDrawerItemTap: onDrawerItemTap,
       ),
-      body: pageList[indexPage],
+      body: PageTransitionSwitcher(
+        transitionBuilder: (
+          Widget child,
+          Animation<double> animation,
+          Animation<double> secondaryAnimation,
+        ) =>
+            SharedAxisTransition(
+          animation: animation,
+          secondaryAnimation: secondaryAnimation,
+          transitionType: SharedAxisTransitionType.horizontal,
+          child: child,
+        ),
+        child: pageList[indexPage],
+      ),
     );
   }
 
   final pageList = [
-    const TasksView(),
+    TasksView(),
   ];
 
   void onDrawerItemTap(int index) {}
