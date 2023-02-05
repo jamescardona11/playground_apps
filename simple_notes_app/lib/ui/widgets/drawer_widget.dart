@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:simple_notes_app/blocs/bloc_exports.dart';
-import 'package:simple_notes_app/ui/pages/tasks_screen.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
+  const MyDrawer({
+    super.key,
+    required this.onDrawerItemTap,
+  });
+
+  final ValueChanged<int> onDrawerItemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,9 @@ class MyDrawer extends StatelessWidget {
             BlocBuilder<TasksBloc, TasksState>(
               builder: (context, state) {
                 return ListTile(
-                  onTap: () => Navigator.pushNamed(context, TasksScreen.id),
+                  onTap: () {
+                    Scaffold.of(context).closeDrawer();
+                  },
                   leading: const Icon(Icons.create_new_folder),
                   trailing: Text(state.allTasks.length.toString()),
                   title: const Text("My Tasks"),
@@ -33,7 +39,9 @@ class MyDrawer extends StatelessWidget {
             BlocBuilder<TasksBloc, TasksState>(
               builder: (context, state) {
                 return ListTile(
-                  onTap: () => Navigator.pushNamed(context, 'recycle-bin'),
+                  onTap: () {
+                    Scaffold.of(context).closeDrawer();
+                  },
                   leading: const Icon(Icons.delete),
                   trailing: Text(state.removedTasks.length.toString()),
                   title: const Text("Deleted task"),

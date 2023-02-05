@@ -4,8 +4,8 @@ import 'package:simple_notes_app/ui/ui.dart';
 class AppRouter {
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case TasksScreen.id:
-        return MaterialPageRoute(builder: (_) => const TasksScreen());
+      case 'tasks-screen':
+        return MaterialPageRoute(builder: (_) => const TasksView());
       case 'recycle-bin':
         return MaterialPageRoute(builder: (_) => const RecycleBinScreen());
       default:

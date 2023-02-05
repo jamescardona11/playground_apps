@@ -3,25 +3,15 @@ import 'package:simple_notes_app/blocs/bloc_exports.dart';
 import 'package:simple_notes_app/models/tasks_model.dart';
 import 'package:simple_notes_app/ui/ui.dart';
 
-class TasksScreen extends StatelessWidget {
+class TasksView extends StatelessWidget {
   static const id = '/';
-  const TasksScreen({Key? key}) : super(key: key);
+  const TasksView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TasksBloc, TasksState>(builder: (context, state) {
       List<Task> tasksList = state.allTasks;
       return Scaffold(
-        drawer: const MyDrawer(),
-        appBar: AppBar(
-          title: const Text('Tasks App'),
-          actions: [
-            IconButton(
-              onPressed: () => showModalBox(context),
-              icon: const Icon(Icons.add),
-            ),
-          ],
-        ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4),
           child: Column(

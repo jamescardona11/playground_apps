@@ -10,10 +10,6 @@ class RecycleBinScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TasksBloc, TasksState>(builder: (context, state) {
       return Scaffold(
-        drawer: const MyDrawer(),
-        appBar: AppBar(
-          title: const Text('Recycle Bin'),
-        ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4),
           child: Column(
